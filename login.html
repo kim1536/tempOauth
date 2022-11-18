@@ -17,7 +17,8 @@
             ux_mode: 'popup',
             callback: (response) => {
                 // YOUR_AUTHORIZATION_CODE_ENDPOINT_URI??
-              var code_receiver_uri = 'https://accounts.google.com/o/oauth2/v2/auth'
+                // https://accounts.google.com/o/oauth2/v2/auth
+              var code_receiver_uri = 'http://localhost:3001/redirecturl'
               // Send auth code to your backend platform
               const xhr = new XMLHttpRequest();
               xhr.open('POST', code_receiver_uri, true);
@@ -26,6 +27,8 @@
               xhr.onload = function() {
                 console.log('Signed in as: ' + xhr.responseText);
               };
+              console.log('Signed in as: ' + xhr.responseText);
+              console.log('code=' + code);
               xhr.send('code=' + code);
               // After receipt, the code is exchanged for an access token and
               // refresh token, and the platform then updates this web app
