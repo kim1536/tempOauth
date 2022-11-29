@@ -3,7 +3,7 @@
 class UserStorages {
     loginUser(id, password, onSuccess, onError) {
         if((id === 'test'&& password === '1234')||(id === 'aaaa'&& password === '1234') ) {
-            onSuccess(id);
+            onSuccess(id,password);
             console.log("loginUser")
         }
         else {
@@ -29,7 +29,7 @@ const password = prompt('password');
 userStorages.loginUser(
     id, 
     password,
-    (user)=>{
+    (user,password)=>{
         userStorages.getRoles(
             user,
             (userRole) =>{
