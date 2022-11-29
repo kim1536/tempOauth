@@ -325,31 +325,23 @@ async function order() {
     await order1('티라미수');
     await order1('그린티라떼');
     await order1('망고 블렌디드');
-    // await order2('아메리카노');
+    await order2('아메리카노');
   }
-  
-const order1 = (item) => {
-     (async () => {
-        await  setTimeout(()=> {
+
+function order1(item) {
+   return new Promise((resolve, reject) => {
+        setTimeout(()=> {
             resolve(console.log(item + ' 나왔습니다.'))
         },500)
     })
-};
-
-// function order1(item) {
-//    return new Promise((resolve, reject) => {
-//         setTimeout(()=> {
-//             resolve(console.log(item + ' 나왔습니다.'))
-//         },500)
-//     })
-//   }
+  }
   
-//   function order2() {
-//     return new Promise(resolve => {
-//       console.log('아메리카노 나왔습니다.');
-//       resolve();
-//     });
-//   }
+  function order2() {
+    return new Promise(resolve => {
+      console.log('아메리카노 나왔습니다.');
+      resolve();
+    });
+  }
   
   order();
 
